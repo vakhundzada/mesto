@@ -1,0 +1,20 @@
+.header__logo {
+  background-image: url("../../../images/mesto-logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 33px;
+  width: 142px;
+}
+
+@media screen and (max-width: 780px) {
+  .header__logo {
+    height: 24px;
+    width: 103px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header__logo {
+    margin-left: 8px;
+  }
+}

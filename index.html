@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <meta content="Место, где можно показать и рассказать про красивые места" name="description">
+  <meta content="Место Россия Исследование" name="keywors">
+  <meta content="Vaqif Akhundzade" name="author">
+  <meta content="Yandex Praktikum" name="author">
+  <title>Место</title>
+  <link href="./pages/index.css" rel="stylesheet">
+</head>
+<body class="root">
+<div class="page">
+  <header class="header">
+    <div class="header__logo"></div>
+  </header>
+  <main class="content">
+    <section class="profile">
+      <img alt="Изображение пользователя" class="profile__avatar" src="./images/jak-iv-kusto.png">
+      <div class="profile__info">
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
+        <button class="button button_type_edit profile__edit-button" aria-label="Edit account information"
+                type="button"></button>
+        <p class="profile__career">Исследователь океана</p>
+      </div>
+      <button class="button button_type_add profile__add-button" aria-label="Add new place" type="button"></button>
+    </section>
+    <section class="place-cards">
+      <ul class="place-cards__list">
+      </ul>
+    </section>
+    <section class="edit-form">
+      <div class="pop-up">
+        <div class="pop-up__container pop-up__container_size_form-card">
+          <button class="button pop-up__close-button edit-form__close-button" aria-label="Close" type="button"></button>
+          <form class="form" name="account-info" action="editForm.php">
+            <h2 class="form__title">Редактировать профиль</h2>
+            <fieldset class="form__input-field">
+              <input class="form__item form__item_el_name" name="username" type="text" value="Жак-Ив Кусто">
+              <input class="form__item form__item_el_career" name="career" type="text" value="Исследователь океана">
+              <button class="button form__button" aria-label="Submit changes" type="submit">Сохранить</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="add-form">
+      <div class="pop-up">
+        <div class="pop-up__container pop-up__container_size_form-card">
+          <button class="button pop-up__close-button add-form__close-button" aria-label="Close" type="button"></button>
+          <form class="form" name="account-info" action="addForm.php">
+            <h2 class="form__title">Новое место</h2>
+            <fieldset class="form__input-field">
+              <input class="form__item form__item_el_title" name="title" type="text" placeholder="Название">
+              <input class="form__item form__item_el_img-link" name="link" type="text" placeholder="Ссылка на картинку">
+              <input class="form__item form__item_el_alt-text" name="alt" type="text" placeholder="Опишите картинку">
+              <button class="button form__button" aria-label="Submit changes" type="submit">Создать</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+  </footer>
+
+  <template class="template">
+
+    <section class="image-preview">
+      <div class="pop-up pop-up_bg-color_transparency-90">
+        <div class="pop-up__container pop-up__container_bg-color_transparent">
+          <button class="button pop-up__close-button" aria-label="Close" type="button"></button>
+          <img class="pop-up__image"
+               src=""
+               alt="">
+        </div>
+      </div>
+    </section>
+
+    <li class="card">
+      <img class="card__image"
+           src=""
+           alt="">
+      <button class="button button_type_delete card__delete-button"></button>
+      <div class="card__info">
+        <h2 class="card__title"></h2>
+        <button class="button button_type_like card__button" aria-label="Like" type="button"></button>
+      </div>
+    </li>
+
+  </template>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

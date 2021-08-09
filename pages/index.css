@@ -1,0 +1,50 @@
+/*VENDOR*/
+@import url("../vendor/normalize.css");
+@import url("../vendor/fonts.css");
+
+/*BLOCKS*/
+@import url("../blocks/root/root.css");
+@import url("../blocks/page/page.css");
+@import url("../blocks/button/button.css");
+@import url("../blocks/header/header.css");
+@import url("../blocks/profile/profile.css");
+@import url("../blocks/place-cards/place-cards.css");
+@import url("../blocks/card/card.css");
+@import url("../blocks/footer/footer.css");
+@import url("../blocks/edit-form/edit-form.css");
+@import url("../blocks/form/form.css");
+@import url("../blocks/pop-up/pop-up.css");
+
+/*ELEMENTS*/
+@import url("../blocks/header/__logo/header__logo.css");
+@import url("../blocks/profile/__avatar/profile__avatar.css");
+@import url("../blocks/profile/__career/profile__career.css");
+@import url("../blocks/profile/__info/profile__info.css");
+@import url("../blocks/profile/__name/profile__name.css");
+@import url("../blocks/profile/__add-button/profile__add-button.css");
+@import url("../blocks/profile/__edit-button/profile__edit-button.css");
+@import url("../blocks/place-cards/__list/place-cards__list.css");
+@import url("../blocks/card/__image/card__image.css");
+@import url("../blocks/card/__button/card__button.css");
+@import url("../blocks/card/__info/card__info.css");
+@import url("../blocks/card/__title/card__title.css");
+@import url("../blocks/footer/__copyright/footer__copyright.css");
+@import url("../blocks/pop-up/__container/pop-up__container.css");
+@import url("../blocks/edit-form/__close-button/edit-form__close-button.css");
+@import url("../blocks/form/__title/form__title.css");
+@import url("../blocks/form/__item/form__item.css");
+@import url("../blocks/form/__input-field/form__input-field.css");
+@import url("../blocks/form/__button/form__button.css");
+@import url("../blocks/pop-up/__close-button/pop-up__close-button.css");
+@import url("../blocks/pop-up/__image/pop-up__image.css");
+
+/*MODIFICATORS*/
+@import url("../blocks/button/_type/button_type_edit.css");
+@import url("../blocks/button/_type/button_type_add.css");
+@import url("../blocks/button/_type/button_type_like.css");
+@import url("../blocks/button/_type/button_type_delete.css");
+@import url("../blocks/button/_type/_active/button_type_like_active.css");
+@import url("../blocks/pop-up/_opened/pop-up_opened.css");
+@import url("../blocks/pop-up/__container/_bg-color/pop-up__container_bg-color_transparent.css");
+@import url("../blocks/pop-up/__container/_size/pop-up__container_size_form-card.css");
+@import url("../blocks/pop-up/_bg-color/pop-up_bg-color_transparency-90.css");

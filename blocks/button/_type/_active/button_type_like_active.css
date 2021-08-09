@@ -1,0 +1,5 @@
+.button_type_like_active {
+  opacity: 1;
+  transition: none;
+  background-image: url("../../../../images/icon-like_active.svg");
+}

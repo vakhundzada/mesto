@@ -1,0 +1,8 @@
+.pop-up__image {
+  max-height: 75vh;
+  max-width: 75vw;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}

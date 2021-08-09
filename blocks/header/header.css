@@ -1,0 +1,29 @@
+.header {
+  position: relative;
+  display: flex;
+  padding: 45px 0 41px 0;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(84, 84, 84, .7);
+}
+
+@media screen and (max-width: 780px) {
+  .header {
+    padding: 28px 0 31px 0;
+    margin-bottom: 42px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    border-bottom: none;
+  }
+
+  .header:after {
+    content: "";
+    width: calc(100% + 38px);
+    position: absolute;
+    left: -19px;
+    bottom: 0;
+    border-bottom: 1px solid rgba(84, 84, 84, .7);
+  }
+}

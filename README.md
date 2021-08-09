@@ -1,17 +1,31 @@
-# Проект: Место
+# Место
 
-### Обзор
+### Описание
 
-* Figma
-* Картинки
+Это сайт в котором вы можете показывать и рассказывать про интересные места.
+Проект был написан в процессе образования в Яндекс.Практикуме.
 
-**Figma**
+### Технологии
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+Проект написан на:
 
-**Картинки**
+* HTML5
+* CSS3
 
-Доставать картинки предстоит из Фигмы. Это расхожая практика, поэтому полезно потренироваться.
-Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
+#### [Link to Project](https://vakhundzada.github.io/mesto-project/index.html)
+###
+# Mesto
 
-Удачи!
+### Description
+
+This is a site where you can read about traveling in Russia.
+The project written during the educational process in Yandex.Praktikum.
+
+### Technologies
+
+Project created with:
+
+* HTML5
+* CSS3
+
+#### [Link to Project](https://vakhundzada.github.io/mesto-project/index.html)
