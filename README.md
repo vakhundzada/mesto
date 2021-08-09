@@ -11,8 +11,9 @@
 
 * HTML5
 * CSS3
+* JS
 
-#### [Link to Project](https://vakhundzada.github.io/mesto-project/index.html)
+#### [Link to Project](https://vakhundzada.github.io/mesto/)
 ###
 # Mesto
 
@@ -27,5 +28,6 @@ Project created with:
 
 * HTML5
 * CSS3
+* JS
 
-#### [Link to Project](https://vakhundzada.github.io/mesto-project/index.html)
+#### [Link to Project](https://vakhundzada.github.io/mesto/)
