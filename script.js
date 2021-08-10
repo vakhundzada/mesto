@@ -35,7 +35,7 @@ const newCardAlt = addForm.querySelector('.form__item_el_alt-text');
 function addFormSubmitHandler(evt) {
   evt.preventDefault();
 
-  addCardToList(newCardTitle.value, newCardImgLink.value, newCardAlt.value, 'afterbegin');
+  addCardToList(newCardTitle.value, newCardImgLink.value, '', 'afterbegin');
 }
 
 addForm.querySelector('.form__button').addEventListener('click', addFormSubmitHandler);
