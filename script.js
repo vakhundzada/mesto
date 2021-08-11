@@ -12,6 +12,8 @@ const popUpCloseButtons = page.querySelectorAll('.pop-up__close-button');
 const editButton = page.querySelector('.profile__edit-button');
 const addButton = page.querySelector('.button_type_add');
 
+const imagePreview = page.querySelector('.image-preview');
+
 
 //Edit and add forms open/close feature
 editButton.addEventListener('click', function () {
@@ -98,7 +100,6 @@ const placeCardsList = page.querySelector('.place-cards__list');
 
 const template = page.querySelector('.template').content;
 const cardTemplate = template.querySelector('.card').cloneNode(true);
-const imagePreviewTemplate = template.querySelector('.image-preview').cloneNode(true);
 
 function addCardToList(cardTitle, imgLink, imgAlt) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -108,34 +109,26 @@ function addCardToList(cardTitle, imgLink, imgAlt) {
 
   placeCardsList.append(cardElement);
 
-  cardElement.querySelector('.card__delete-button').addEventListener('click', function () {
+  cardElement.querySelector('.card__delete-button').addEventListener('click', function () { // Deleting card on click to trash button
     cardElement.remove();
   });
 
-  cardElement.querySelector('.button_type_like').addEventListener('click', function () {
+  cardElement.querySelector('.button_type_like').addEventListener('click', function () { //Changing like button style on click to like button
     cardElement.querySelector('.button_type_like').classList.toggle('button_type_like_active');
   });
 
-  createImagePreview(cardElement.querySelector('.card__image'));
+  cardElement.querySelector('.card__image').addEventListener('click', function (){ // Changing preview image on click
+    page.querySelector('.pop-up__image').src = imgLink;
+    page.querySelector('.pop-up__image').alt = imgAlt;
+    imagePreview.querySelector('.pop-up').classList.add('pop-up_opened');
+  });
 }
 
+// Creating default cards
 for (let i = 0; i < initialCards.length; i++) {
   addCardToList(initialCards[i].name, initialCards[i].link, initialCards[i].alt);
 }
 
-
-//Cars image preview pop-up
-function createImagePreview(cardImage) {
-  imagePreviewTemplate.querySelector('.pop-up__image').src = cardImage.getAttribute('src');
-  imagePreviewTemplate.querySelector('.pop-up__image').alt = cardImage.getAttribute('alt');
-
-  page.append(imagePreviewTemplate);
-
-  imagePreviewTemplate.querySelector('.pop-up__close-button').addEventListener('click', function () {
-    imagePreviewTemplate.querySelector('.pop-up').classList.remove('pop-up_opened');
-  });
-
-  cardImage.addEventListener('click', function () {
-    imagePreviewTemplate.querySelector('.pop-up').classList.add('pop-up_opened');
-  });
-}
+imagePreview.querySelector('.pop-up__close-button').addEventListener('click', function () {  // Close image preview on click
+  imagePreview.querySelector('.pop-up').classList.remove('pop-up_opened');
+});
