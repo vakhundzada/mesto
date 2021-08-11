@@ -32,7 +32,6 @@ for (let i = 0; i < popUpCloseButtons.length; i++) {
 //Adding functionality to add-form pop-up
 const newCardTitle = addForm.querySelector('.form__item_el_title');
 const newCardImgLink = addForm.querySelector('.form__item_el_img-link');
-const newCardAlt = addForm.querySelector('.form__item_el_alt-text');
 
 function addFormSubmitHandler(evt) {
   evt.preventDefault();
