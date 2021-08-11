@@ -93,21 +93,25 @@ function editFormSubmitHandler(evt) {
   profileCareer.textContent = careerInput.value;
 }
 
+function openPopUp(popUp) {
+  return popUp.classList.add('pop-up_opened');
+}
+
+function closePopUp(popUp) {
+  return popUp.classList.remove('pop-up_opened');
+}
+
 
 //Edit and add forms open/close feature
-editButton.addEventListener('click', function () {
-  editFormPopUp.classList.add('pop-up_opened');
-});
+editButton.addEventListener('click', () => openPopUp(editFormPopUp));
 
-addButton.addEventListener('click', function () {
-  addFormPopUp.classList.add('pop-up_opened');
-});
+addButton.addEventListener('click', () => openPopUp(addFormPopUp));
 
-for (let i = 0; i < popUpCloseButtons.length; i++) {
-  popUpCloseButtons.item(i).addEventListener('click', function () {
-    popUpCloseButtons.item(i).closest('.pop-up').classList.remove('pop-up_opened')
+popUpCloseButtons.forEach(function (elem){
+  elem.addEventListener('click', function () {
+    closePopUp(elem.closest('.pop-up'));
   });
-}
+});
 
 
 //Adding functionality to add-form pop-up
