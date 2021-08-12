@@ -3,26 +3,32 @@ const initialCards = [
   {
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
+    alt: 'Слегка заснеженная гора в селе Архыз'
   },
   {
     name: 'Челябинская область',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
+    alt: 'Маленькое озеро в Челябинске, вокруг всё покрыто снегом'
   },
   {
     name: 'Иваново',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
+    alt: 'Панельные дома в городе Иваново'
   },
   {
     name: 'Камчатка',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
+    alt: 'Красивая гора в Камчатке'
   },
   {
     name: 'Холмогорский район',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
+    alt: 'Длинная и пряма железная дорога в Холмогорском районе, по бокам железнодорожных путей – густой лес'
   },
   {
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
+    alt: 'Большая и красивая гора на берегу озера Байкал'
   }
 ];
 
@@ -46,10 +52,23 @@ const profileName = page.querySelector('.profile__name');
 const profileCareer = page.querySelector('.profile__career');
 
 // Functions
-function createCard(name, link) {
+function createCard(name, link, alt) {
   const cardElement = cardTemplate.cloneNode(true);
   cardElement.querySelector('.card__image').src = link;
   cardElement.querySelector('.card__title').textContent = name;
+  cardElement.querySelector('.card__image').alt = alt;
+
+  // Deleting card on click to trash button
+  cardElement.querySelector('.card__delete-button').addEventListener('click', () => cardElement.closest('.card').remove());
+
+  //Changing like button style on click to like button
+  cardElement.querySelector('.button_type_like').addEventListener('click', () => cardElement.querySelector('.button_type_like').classList.toggle('button_type_like_active'));
+
+  // Changing preview image on click
+  cardElement.querySelector('.card__image').addEventListener('click', () => {
+    changePreview(cardElement.querySelector('.card__image').src, cardElement.querySelector('.card__image').alt);
+    openPopUp(imagePreview.querySelector('.pop-up'));
+  });
 
   return cardElement;
 }
@@ -58,8 +77,9 @@ function addCard(container, cardElement) {
   container.prepend(cardElement);
 }
 
-function changePreview(imgLink){
+function changePreview(imgLink, imgAlt) {
   page.querySelector('.pop-up__image').src = imgLink;
+  page.querySelector('.pop-up__image').alt = imgAlt;
 }
 
 function addFormSubmitHandler(evt) {
@@ -75,7 +95,7 @@ function editFormSubmitHandler(evt) {
 
   profileName.textContent = nameInput.value;
   profileCareer.textContent = careerInput.value;
-  closePopUp(editForm.querySelector('.pop-up'));
+  closePopUp(editFormPopUp);
 }
 
 function openPopUp(popUp) {
@@ -91,7 +111,7 @@ editButton.addEventListener('click', () => openPopUp(editFormPopUp));
 
 addButton.addEventListener('click', () => openPopUp(addFormPopUp));
 
-popUpCloseButtons.forEach(function (elem){
+popUpCloseButtons.forEach(function (elem) {
   elem.addEventListener('click', function () {
     closePopUp(elem.closest('.pop-up'));
   });
@@ -104,29 +124,13 @@ addForm.querySelector('.form').addEventListener('submit', addFormSubmitHandler);
 editForm.querySelector('.form').addEventListener('submit', editFormSubmitHandler);
 
 // Creating initial cards
-initialCards.forEach(function (elem){
-  addCard(placeCardsList, createCard(elem.name, elem.link));
+initialCards.forEach(function (elem) {
+  addCard(placeCardsList, createCard(elem.name, elem.link, elem.alt));
 });
 
 // Close image preview on click
 imagePreview.querySelector('.pop-up__close-button').addEventListener('click', function () {
-  imagePreview.querySelector('.pop-up').classList.remove('pop-up_opened');
+  closePopUp(imagePreview.querySelector('.pop-up'));
 });
 
-// Deleting card on click to trash button
-page.querySelectorAll('.card__delete-button').forEach(function (elem){
-  elem.addEventListener('click', () => elem.closest('.card').remove());
-});
 
-//Changing like button style on click to like button
-page.querySelectorAll('.button_type_like').forEach(function (elem){
-  elem.addEventListener('click', () => elem.classList.toggle('button_type_like_active'));
-});
-
-// Changing preview image on click
-page.querySelectorAll('.card__image').forEach(function (elem) {
-  elem.addEventListener('click', () => {
-    changePreview(elem.src);
-    imagePreview.querySelector('.pop-up').classList.add('pop-up_opened');
-  });
-});
