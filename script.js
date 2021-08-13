@@ -50,6 +50,7 @@ const nameInput = editFormPopUp.querySelector('.form__item_el_name');
 const careerInput = editFormPopUp.querySelector('.form__item_el_career');
 const profileName = page.querySelector('.profile__name');
 const profileCareer = page.querySelector('.profile__career');
+const previewPopUp = imagePreview.querySelector('.pop-up');
 
 // Functions
 function createCard(name, link, alt) {
@@ -67,7 +68,7 @@ function createCard(name, link, alt) {
   // Changing preview image on click
   cardElement.querySelector('.card__image').addEventListener('click', () => {
     changePreview(cardElement.querySelector('.card__image').src, cardElement.querySelector('.card__image').alt);
-    openPopUp(imagePreview.querySelector('.pop-up'));
+    openPopUp(previewPopUp);
   });
 
   return cardElement;
@@ -113,7 +114,7 @@ addButton.addEventListener('click', () => openPopUp(addFormPopUp));
 
 popUpCloseButtons.forEach(function (elem) {
   elem.addEventListener('click', function () {
-    closePopUp(elem.closest('.pop-up'));
+    closePopUp(previewPopUp);
   });
 });
 
@@ -130,7 +131,7 @@ initialCards.forEach(function (elem) {
 
 // Close image preview on click
 imagePreview.querySelector('.pop-up__close-button').addEventListener('click', function () {
-  closePopUp(imagePreview.querySelector('.pop-up'));
+  closePopUp(previewPopUp);
 });
 
 
